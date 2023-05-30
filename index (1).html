@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator Website</title>
+    <style>
+      input[type="button"] {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Calculator Website</h1>
+    <form>
+      <input type="text" id="num1" />
+      <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+      <input type="text" id="num2" />
+      <input type="button" value="=" onclick="calculate()" />
+      <input type="text" id="result" />
+    </form>
+    <script>
+      function calculate() {
+        var num1 = document.getElementById("num1").value;
+        var num2 = document.getElementById("num2").value;
+        var operator = document.getElementById("operator").value;
+        var result = 0;
+        if (operator === "+") {
+          result = parseFloat(num1) + parseFloat(num2);
+        } else if (operator === "-") {
+          result = parseFloat(num1) - parseFloat(num2);
+        } else if (operator === "*") {
+          result = parseFloat(num1) * parseFloat(num2);
+        } else if (operator === "/") {
+          result = parseFloat(num1) / parseFloat(num2);
+        }
+        document.getElementById("result").value = result;
+      }
+    </script>
+  </body>
+</html>
